@@ -11,6 +11,11 @@ export async function runShot(shot, query, vc) {
   s.subtitle = query.get('subtitle') ?? 'Neon Nights';
   s.tagline = query.get('tagline') ?? 'EVERY SUNSET HAS A STORY';
   if (query.get('fill')) s.titleFill = query.get('fill');
+  // Shot scenes show the multi-photo cover: one different sample per panel.
+  s.fillAll = query.get('fillall') === 'true';
+  const fillAllBox = document.getElementById('fill-all');
+  if (fillAllBox) fillAllBox.checked = s.fillAll;
+  s.selected = 0;
   if (shot === 'cover') document.body.classList.add('shot-cover');
   vc.redraw();
   await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));

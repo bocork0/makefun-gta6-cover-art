@@ -337,11 +337,11 @@ export function renderCover(ctx, W, H, state) {
     ctx.fillText(subtitle, pad, stripY + stripH * 0.88);
   }
   if (tagline) {
-    const size = Math.round(stripH * 0.15);
+    const size = Math.round(stripH * 0.13);
     ctx.font = `bold ${size}px system-ui, sans-serif`;
-    if ('letterSpacing' in ctx) ctx.letterSpacing = `${Math.round(size * 0.32)}px`;
+    if ('letterSpacing' in ctx) ctx.letterSpacing = `${Math.round(size * 0.28)}px`;
     const tw = ctx.measureText(tagline).width;
-    if (tw < W * 0.34) {
+    if (tw < W * 0.38) {
       ctx.fillStyle = 'rgba(246, 238, 252, 0.92)';
       ctx.textAlign = 'right';
       ctx.fillText(tagline, W - pad, stripY + stripH * 0.5);
