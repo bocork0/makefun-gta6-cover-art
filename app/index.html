@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Coast Cover Studio — GTA-style cover art maker</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">VC</span>
+    <div>
+      <h1>Vice Coast Cover Studio</h1>
+      <p>Turn any photo into Vice City–style cover art. Runs offline — your photos never leave this machine.</p>
+    </div>
+  </div>
+  <p class="top-note">Original art &amp; lettering. No Rockstar logo, artwork or fonts.</p>
+</header>
+
+<main class="layout">
+  <section class="controls" aria-label="Cover controls">
+    <fieldset class="group" id="photos-group">
+      <legend>1 · Photos</legend>
+      <p class="hint">Pick up to four photos. Click a panel in the preview to select it, then drag to reposition and scroll to zoom.</p>
+      <div class="slots" id="slots"></div>
+      <label class="check"><input type="checkbox" id="fill-all" checked> One photo fills all panels</label>
+      <div class="row">
+        <button type="button" id="load-samples">Load sample photos</button>
+        <button type="button" id="clear-photos">Clear all</button>
+      </div>
+    </fieldset>
+
+    <fieldset class="group">
+      <legend>2 · Layout</legend>
+      <div class="pill-row" id="layout-row" role="group" aria-label="Layout">
+        <button type="button" data-layout="hero" class="pill active">Hero + 3</button>
+        <button type="button" data-layout="grid" class="pill">Four panels</button>
+        <button type="button" data-layout="bleed" class="pill">Full bleed</button>
+        <button type="button" data-layout="tilt" class="pill">Snapshots</button>
+      </div>
+    </fieldset>
+
+    <fieldset class="group">
+      <legend>3 · Colour grade</legend>
+      <div class="pill-row" id="grade-row" role="group" aria-label="Colour grade">
+        <button type="button" data-grade="sunset" class="pill active">Sunset</button>
+        <button type="button" data-grade="neon" class="pill">Neon Nights</button>
+        <button type="button" data-grade="dusk" class="pill">Palm Dusk</button>
+        <button type="button" data-grade="tealheat" class="pill">Teal Heat</button>
+        <button type="button" data-grade="noir" class="pill">Noir</button>
+      </div>
+      <label class="slider-label">Selected panel zoom
+        <input type="range" id="zoom" min="1" max="3" step="0.05" value="1">
+      </label>
+    </fieldset>
+
+    <fieldset class="group">
+      <legend>4 · Caption</legend>
+      <label class="field">Title
+        <input type="text" id="title" maxlength="28" value="VICE COAST">
+      </label>
+      <label class="field">Subtitle
+        <input type="text" id="subtitle" maxlength="40" value="Neon Nights">
+      </label>
+      <label class="field">Tagline
+        <input type="text" id="tagline" maxlength="48" value="EVERY SUNSET HAS A STORY">
+      </label>
+      <div class="row">
+        <label class="field grow">Title fill
+          <select id="title-fill">
+            <option value="white">White</option>
+            <option value="sunset">Sunset gradient</option>
+            <option value="neon">Neon pink</option>
+            <option value="gold">Gold</option>
+          </select>
+        </label>
+        <label class="check"><input type="checkbox" id="outline" checked> Bold outline</label>
+      </div>
+    </fieldset>
+
+    <fieldset class="group">
+      <legend>5 · Export</legend>
+      <div class="pill-row" id="size-row" role="group" aria-label="Post size">
+        <button type="button" data-size="square" class="pill">1080 × 1080</button>
+        <button type="button" data-size="portrait" class="pill">1080 × 1350</button>
+        <button type="button" data-size="wide" class="pill active">1920 × 1080</button>
+      </div>
+      <div class="row">
+        <button type="button" id="export" class="primary">Export PNG</button>
+        <button type="button" id="export-all">Export all 3 sizes</button>
+      </div>
+      <p id="status" role="status"></p>
+    </fieldset>
+  </section>
+
+  <section class="stage" aria-label="Cover preview">
+    <canvas id="stage" width="960" height="540" aria-label="Live cover preview"></canvas>
+    <p class="stage-hint">Live preview — click a panel to select it, drag to move the photo, scroll to zoom.</p>
+    <p class="stage-meta" id="stage-meta"></p>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>All art, lettering and sample photos are original work made for this app. Fonts: Anton &amp; Pacifico under the SIL Open Font License (see app/fonts/OFL.txt).</p>
+</footer>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
