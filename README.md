@@ -1,4 +1,7 @@
 # Vice Coast Cover Studio
+[![make.fun](https://make.fun/badge/gta6-cover-art-01.svg)](https://make.fun/c/gta6-cover-art-01)
+[![rank](https://make.fun/badge/gta6-cover-art-01/bocork0/makefun-gta6-cover-art/rank.svg)](https://make.fun/c/gta6-cover-art-01)
+[![reward](https://make.fun/badge/gta6-cover-art-01/bocork0/makefun-gta6-cover-art/reward.svg)](https://make.fun/c/gta6-cover-art-01)
 
 A web app that turns any photo and a caption into cover art in the style of
 GTA 6's posters — the multi-panel poster look, bold caption lettering and a
